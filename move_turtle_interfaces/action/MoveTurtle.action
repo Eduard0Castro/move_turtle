@@ -1,0 +1,17 @@
+# Goal
+float64 linear_vel_x
+float64 angular_vel_z
+int64 duration_sec
+
+---
+
+# Result
+bool success
+string message
+
+---
+
+# Feedback
+float32 linear_velocity
+float32 angular_velocity
+

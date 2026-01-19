@@ -1,0 +1,14 @@
+<launch>
+
+    <set_env name = "TURTLEBOT3_MODEL" value = "waffle"/>
+    <include file="$(find-pkg-share turtlebot3_gazebo)/launch/empty_world.launch.py"/>
+    
+    <node pkg = "rclcpp_components" exec = "component_container_mt" name = "turtle_bot_container"/>
+    <executable cmd = "ros2 component load /turtle_bot_container move_turtle_final TurtleBotFinal::TurtleBotControl"
+    output = "screen"/>
+
+    <node pkg = "move_turtle_final" exec = "turtle_manager">
+        <param name = "node_name" value = "['turtle_bot_control']"/>
+    </node>
+
+</launch>
